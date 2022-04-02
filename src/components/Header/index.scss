@@ -1,0 +1,20 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 0;
+    box-shadow: inset 0px -1px 0px rgba(146, 168, 189, 0.25);
+    &-logo{
+        width: 120px;
+        img{
+            width: 100%;
+        }
+    }
+    &-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+}
