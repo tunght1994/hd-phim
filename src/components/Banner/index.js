@@ -4,13 +4,13 @@ import './index.scss'
 // help
 import { host } from '../../helper/host'
 import { API_KEY } from '../../helper/contant'
+import checkImg from '../../helper/checkImg'
 
 // Slider
 import { Autoplay , Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import 'swiper/css/navigation';
-import checkImg from '../../helper/checkImg'
 
 const Banner = () => {
 
