@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './index.scss'
 // help
-import { host } from '../../helper/host'
-import { API_KEY } from '../../helper/contant'
+import { host, API_KEY } from '../../helper/host'
 import checkImg from '../../helper/checkImg'
 
 // Slider

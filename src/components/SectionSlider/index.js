@@ -1,22 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom';
+
 // css
 import './index.scss'
 
-
-
-// Slider
-import { Autoplay, Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import 'swiper/css/navigation';
-import { Link } from 'react-router-dom';
+// component
 import MovieList from '../MovieList';
 
 const SectionSlider = () => {
-
-    const [typeID, setTypeID] = useState({type: "", typeID: ""})
-
-   
 
     return (
         <div className='section-slider'>
@@ -27,7 +18,7 @@ const SectionSlider = () => {
                         <button className="small">View more</button>
                     </Link>
                 </div>
-                <MovieList typeID={typeID} />
+                <MovieList typeID="now_playing"/>
             </div>
             <div className="section-slider-item">
                 <div className="section-slider-item-header">
@@ -36,7 +27,7 @@ const SectionSlider = () => {
                         <button className="small">View more</button>
                     </Link>
                 </div>
-                <MovieList typeID={typeID}/>
+                <MovieList typeID="top_rated"/>
             </div>
             <div className="section-slider-item">
                 <div className="section-slider-item-header">
@@ -45,7 +36,7 @@ const SectionSlider = () => {
                         <button className="small">View more</button>
                     </Link>
                 </div>
-                <MovieList typeID={typeID} />
+                <MovieList typeID="popular" />
             </div>
         </div>
     )
