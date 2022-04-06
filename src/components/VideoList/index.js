@@ -5,7 +5,6 @@ import './index.scss'
 
 const VideoList = () => {
     const [data , setData] = useState([])
-    console.log(data)
     const {id} = useParams()
 
     useEffect(() => {
@@ -19,13 +18,13 @@ const VideoList = () => {
         fetchData()
     },[])
   return (
-    <div>
-         {
+    <>
+        {
                 data.map((item, i) => (
                     <Video key={i} item={item}/>
                 ))
-            }
-    </div>
+        }
+    </>
   )
 }
 

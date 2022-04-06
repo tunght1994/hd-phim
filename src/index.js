@@ -1,23 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/boxicons-2.0.7/css/boxicons.min.css'
-import configureStore from './redux/store';
-
-let initialStates = {}
-
-const store = configureStore(initialStates);
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
