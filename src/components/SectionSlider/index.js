@@ -1,43 +1,55 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
 
 // css
 import './index.scss'
 
 // component
 import MovieList from '../MovieList';
+import TvShows from '../TvShows';
+import Button from '../Button'
+import { MOVIE, POPULAR, TOPRATED, TRENDING, TVSHOWS } from '../../contants/key';
 
 const SectionSlider = () => {
+
+    const [isShowMovie, setIsShowMovie] = useState(MOVIE)
+
 
     return (
         <div className='section-slider'>
             <div className="section-slider-item">
                 <div className="section-slider-item-header">
-                    <h2>Trending</h2>
-                    <Link to="/movie">
-                        <button className="small">View more</button>
-                    </Link>
+                    <div className="section-slider-item-header-left">
+                        <div className="show-movie">
+                            <Button
+                                text="MOVIE LIST"
+                                className="movie"
+                                onClick={() => setIsShowMovie(MOVIE)}
+                            />
+                            <Button
+                                text="TV SHOWS"
+                                className="movie"
+                                onClick={() => setIsShowMovie(TVSHOWS)}
+                            />
+                        </div>
+                    </div>
                 </div>
-                <MovieList typeID="trending"/>
             </div>
-            <div className="section-slider-item">
-                <div className="section-slider-item-header">
-                    <h2>Top Rated</h2>
-                    <Link to="/movie">
-                        <button className="small">View more</button>
-                    </Link>
-                </div>
-                <MovieList typeID="top_rated"/>
-            </div>
-            <div className="section-slider-item">
-                <div className="section-slider-item-header">
-                    <h2>Popular</h2>
-                    <Link to="/movie">
-                        <button className="small">View more</button>
-                    </Link>
-                </div>
-                <MovieList typeID="popular" />
-            </div>
+            {
+                isShowMovie === MOVIE ? (
+                    <>
+                        <MovieList typeID={TRENDING} />
+                        <MovieList typeID={TOPRATED} />
+                        <MovieList typeID={POPULAR} />
+                    </>
+
+                ) : (
+                    <>
+                        <TvShows typeID={TRENDING} />
+                        <TvShows typeID={TOPRATED} />
+                        <TvShows typeID={POPULAR} />
+                    </>
+                )
+            }
         </div>
     )
 

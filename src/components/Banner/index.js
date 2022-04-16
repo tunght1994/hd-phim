@@ -25,6 +25,7 @@ const Banner = () => {
     fetchData()
   }, [])
 
+
   return (
     <div className='banner'>
       <Swiper
@@ -45,10 +46,7 @@ const Banner = () => {
               </SwiperSlide>
             ))
         }
-
-
       </Swiper>
-
     </div>
   )
 }

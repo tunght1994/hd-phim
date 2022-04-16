@@ -6,6 +6,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            &-left{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                .show-movie{
+                    display: flex;
+                    gap: 20px;
+                    .movie{
+                        background-color: #fff;
+                        color: #000;
+                        border: 1px solid #000;
+                    }
+                }
+            }
         }
     }
 }
