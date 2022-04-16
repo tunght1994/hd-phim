@@ -1,5 +1,5 @@
 const checkStr = (str , number) => {
-    return str.length > number ? str.slice(0, number) + "..." : str
+    return str.length > 0 ? str.substr(0, number) : str
 }
 
 export default checkStr

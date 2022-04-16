@@ -18,7 +18,7 @@ const SectionSlider = () => {
                         <button className="small">View more</button>
                     </Link>
                 </div>
-                <MovieList typeID="now_playing"/>
+                <MovieList typeID="trending"/>
             </div>
             <div className="section-slider-item">
                 <div className="section-slider-item-header">
