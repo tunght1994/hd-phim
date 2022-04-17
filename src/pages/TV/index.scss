@@ -1,0 +1,13 @@
+.tv-show{
+    margin: 50px;
+    &-item{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    &-btn{
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+    }
+}

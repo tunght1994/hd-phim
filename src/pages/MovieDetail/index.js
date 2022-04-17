@@ -17,8 +17,8 @@ const MovieDetail = () => {
 
     const [data , setData] = useState([])
     const { genres ,production_countries, production_companies} = data
-    console.log(data)
     const { id } = useParams()
+    
     useEffect(() => {
         const url = `${host}/movie/${id}?api_key=${API_KEY}&language=en-US`
         const fetchData = async () => {

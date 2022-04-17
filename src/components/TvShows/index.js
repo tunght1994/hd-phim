@@ -6,10 +6,9 @@ import './index.scss'
 
 // helper
 import { API_KEY, host } from '../../helper/host'
-import checkStr from '../../helper/checkStr'
-import convertDateTime from '../../helper/convertTime'
-import checkImg from '../../helper/checkImg';
 
+// component
+import MovieItem from '../MovieItem'
 import Button from '../Button';
 
 // Slider
@@ -18,7 +17,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import 'swiper/css/navigation';
 
-const TvShows = ({ typeID }) => {
+const TvList = ({ typeID }) => {
 
     const [data, setData] = useState([])
 
@@ -34,8 +33,8 @@ const TvShows = ({ typeID }) => {
     }, [typeID])
 
     return (
-        <div className='tv-show'>
-            <div className="tv-show-header">
+        <div className='tv-list'>
+            <div className="tv-list-header">
                 <p>
                     TV {typeID}
                 </p>
@@ -54,18 +53,7 @@ const TvShows = ({ typeID }) => {
             >
                 {data?.map((item, index) => (
                     <SwiperSlide key={index}>
-                        <Link to={`/tv/detail/${item.id}`} className='tv-show-item'>
-                            <img src={checkImg(item.poster_path || item.backdrop_path)} alt="" className='tv-show-item-img' />
-                            <div className="tv-show-item-info">
-                                <p>{checkStr((item.title || item.original_title || item.name || item.original_name), 20)}</p>
-                                <div className='tv-show-item-info-text'>
-                                    <p>{convertDateTime(item.release_date, "YYYY")}</p>
-                                    <p>{item.vote_average}
-                                        <i class='bx bxs-star icon'></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </Link>
+                        <MovieItem item={item}/>
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -74,4 +62,4 @@ const TvShows = ({ typeID }) => {
     )
 }
 
-export default TvShows
+export default TvList

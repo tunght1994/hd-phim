@@ -5,7 +5,7 @@ import './index.scss'
 
 // component
 import MovieList from '../MovieList';
-import TvShows from '../TvShows';
+import TvList from '../TvShows';
 import Button from '../Button'
 import { MOVIE, POPULAR, TOPRATED, TRENDING, TVSHOWS } from '../../contants/key';
 
@@ -44,9 +44,9 @@ const SectionSlider = () => {
 
                 ) : (
                     <>
-                        <TvShows typeID={TRENDING} />
-                        <TvShows typeID={TOPRATED} />
-                        <TvShows typeID={POPULAR} />
+                        <TvList typeID={TRENDING} />
+                        <TvList typeID={TOPRATED} />
+                        <TvList typeID={POPULAR} />
                     </>
                 )
             }

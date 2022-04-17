@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-import checkStr from '../../helper/checkStr'
-import convertDateTime from '../../helper/convertTime'
-
 // css
 import './index.scss'
 
+// component
+import Button from '../Button';
+import MovieItem from '../MovieItem'
+
 // help
 import { host, API_KEY } from '../../helper/host'
-import checkImg from '../../helper/checkImg'
 
 // Slider
 import { Autoplay , Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import 'swiper/css/navigation';
-import Button from '../Button';
 
 const MovieList = ({ typeID }) => {
 
@@ -54,18 +53,7 @@ const MovieList = ({ typeID }) => {
             >
                 {data?.map((item,index) => (
                     <SwiperSlide key={index}>
-                        <Link to={`/movie/detail/${item.id}`} className='movie-list-item'>
-                            <img src={checkImg(item.poster_path || item.backdrop_path)} alt="" className='movie-list-item-img'/>
-                            <div className="movie-list-item-info">
-                                <p>{checkStr((item.title || item.original_title), 20)}</p>
-                                <div className='movie-list-item-info-text'> 
-                                    <p>{convertDateTime(item.release_date, "YYYY")}</p>
-                                    <p>{item.vote_average} 
-                                    <i class='bx bxs-star icon'></i>
-                                    </p>
-                                </div>  
-                            </div>
-                        </Link>
+                        <MovieItem item={item}/>
                     </SwiperSlide>
                 ))}    
             </Swiper>

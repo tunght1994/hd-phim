@@ -1,0 +1,13 @@
+.movie-show{
+    margin: 50px;
+    &-item{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    &-btn{
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+    }
+}

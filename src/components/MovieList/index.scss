@@ -13,28 +13,5 @@
         }
     }
 
-    &-item{
-        &-img{
-            border-radius: 20px;
-            height: 275px;
-        }
-        &-info{
-            margin-top: 10px;
-            p{
-                font-weight: bold;
-            }
-            &-text{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-top: 5px;
-                font-size: 14px;
-                .icon{
-                    margin-left: 5px;
-                    color: yellow;
-                    font-size: 12px;
-                }
-            }
-        }
-    }
+   
 }

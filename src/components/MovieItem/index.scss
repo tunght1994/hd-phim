@@ -1,0 +1,30 @@
+.movie-list-item{
+    margin: 20px;
+
+    &-img{
+        // border-radius: 20px 20px 0 0;
+        width: 200px;
+        height: 275px;
+        object-fit: cover;
+    }
+    &-info{
+        background-color: #000;
+        color: #fff;
+        padding: 10px;
+        p{
+            font-weight: bold;
+        }
+        &-text{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 14px;
+            .icon{
+                margin-left: 5px;
+                color: yellow;
+                font-size: 12px;
+            }
+        }
+    }
+}
